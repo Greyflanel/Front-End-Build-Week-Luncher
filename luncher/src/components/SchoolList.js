@@ -22,11 +22,11 @@ componentDidMount() {
 }
 
 render() {
-    console.log(this.state);
+    // console.log(this.state.schools[0]);
     return (
         <div className="school-list">
 {this.state.schools.map(school => (
-    <SchoolCard key={school.id} school={school}/>
+    <SchoolCard key={school.id} school={school} schoolName={school.schoolName}/>
 ))}
         </div>
     )
