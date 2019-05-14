@@ -1,23 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SchoolList from "./SchoolList";
 
 const SchoolCard = props => {
-  console.log(props);
+  console.log(props.school);
 
   return (
     <div className="school-card" >
-     
-     {/* <NavLink to={`/school-list/schools/${props.school.id}`}>
+      <NavLink to='/'>
         <button>Donate</button>
       </NavLink>
-      <h3>{props.school.schoolName}</h3>
-      <h4>{props.school.contact}</h4>
+      <h3>{props.schoolName}</h3>
+      <h4>{props.contact}</h4>
       <p>
-        {props.school.state} -{props.school.zip}-
+        {props.state} -{props.zip}-
       </p>
       <h6>
-        funds needed: <br /> ${props.school.fundsNeeded}
-      </h6> */}
+        funds needed: <br /> ${props.fundsNeeded}
+      </h6>
     </div>
   );
 };

@@ -26,7 +26,7 @@ render() {
     return (
         <div className="school-list">
 {this.state.schools.map(school => (
-    <SchoolCard key={school.id} school={school} schoolName={school.schoolName}/>
+    <SchoolCard key={school.id} school={school} />
 ))}
         </div>
     )
