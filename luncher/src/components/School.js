@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class School extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             school: ''
         };
@@ -15,8 +15,10 @@ class School extends Component {
 
 fetchSchool = id => {
     axios
-    .get(`https://luncher-backend.herokuapp.com/api/schools/${id}`)
+    .get(`https://luncher-backend.herokuapp.com/api/school/6`)
     .then(response => {
+        console.log(response);
+        
         this.setState(() => ({ school: response.data }));
     })
     .catch(error => {
@@ -25,7 +27,7 @@ fetchSchool = id => {
 };
 
 render() {
-    console.log(this.props.school);
+    console.log(this.state);
     
     return (
         <div>

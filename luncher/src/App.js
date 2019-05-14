@@ -14,9 +14,11 @@ class App extends Component {
   render() {
   return (
     <div className="App">
+    
     <SchoolList schools={this.props.schools}/>
     <Route path='/' component={SchoolCard}/>
-      <Route exact path={`/school-list/school/:id`} component={ SchoolCard }/>
+      <Route exact path='/school-list/school/:id' component={ SchoolCard }/>
+      <Route exact path='/school/single-school/:id' component={ School }/>
     </div>
   );
   }
