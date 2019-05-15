@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
 import SchoolList from './components/SchoolList';
-import School from './components/School'
+import School from './components/SchoolCard';
 import SchoolCard from './components/SchoolCard';
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.setState = {
-      schools: []
+  constructor() {
+    super();
+    this.state = {
+      school: ''
     }
   }
+
   render() {
-  return (
-    <div className="App">
-    <SchoolList schools={this.props.schools}/>
-    <Route path='/' component={SchoolCard}/>
-      <Route exact path={`/school-list/schools/:id`} component={ School }/>
-    </div>
-  );
+    console.log(this.props);
+    
+    
+    return (
+      <div className="App">
+      <Route exact path='/' component={SchoolList}/>
+        <Route path={'/school-list/school/:id'} component={SchoolCard} />
+        
+      </div>
+    )
   }
 }
-
 export default App;
