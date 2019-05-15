@@ -16,24 +16,22 @@ class School extends Component {
     }
 
 
-    fetchSchool = id => {
+    fetchSchool = () => {
         axios
         .get(`https://luncher-backend.herokuapp.com/api/schools/${this.props.match.params.id}`)
         .then(response => {
-            this.setState({ school: response.data }, id);
+            this.setState({ school: response.data });
         })
         .catch(error => {
             console.log(error)
         })
     }
   
-    
     render() {
-        console.log(this.state);
-        
         return (
-            <div>
-        </div>
+            <div className='school'>
+                {this.state.school.schoolName}
+            </div>
             
         )
     }

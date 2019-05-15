@@ -14,7 +14,7 @@ class SchoolList extends Component {
         axios
         .get('https://luncher-backend.herokuapp.com/api/schools')
         .then(response => {
-            this.setState(() => ({schools: response.data}));
+            this.setState({schools: response.data});
         })
         .catch(error => {
             console.log('Server Error', error);

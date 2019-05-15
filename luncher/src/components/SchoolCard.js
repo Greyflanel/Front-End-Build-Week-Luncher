@@ -8,6 +8,7 @@ console.log(props);
   return (
    
     <div className="school-card">
+
 <h3>{props.school.schoolName}</h3>
 <h5>{props.school.contact}</h5>
 <span>{props.school.state} {``}</span>

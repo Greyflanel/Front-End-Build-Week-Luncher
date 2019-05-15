@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
       <Route exact path='/' component={SchoolList}/>
-        <Route path={'/school-list/school/:id'} component={SchoolCard} />
+        <Route path='/school-list/school/:id' render={(props) => <School {...props}/>} />
         
       </div>
     )
