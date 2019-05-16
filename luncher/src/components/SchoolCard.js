@@ -1,21 +1,24 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import School from './School';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const SchoolCard = props => {
-console.log(props);
-
+  console.log(props);
   return (
-   
+    <div className="card-container">
     <div className="school-card">
-
-<h3>{props.school.schoolName}</h3>
-<h5>{props.school.contact}</h5>
-<span>{props.school.state} {``}</span>
-{props.school.zip} <br/>
- <p>funds needed:  </p>${props.school.fundsNeeded} <br/>
- <NavLink to={`/school-list/school/${props.school.id}`}><button>Donate</button></NavLink> 
+      <h3>{props.school.schoolName}</h3>
+      <strong>{props.school.contact}</strong>
+      <p>
+        {props.school.state} {``}
+      </p>
+      {props.school.zip} <br />
+      <p>funds needed: </p>${props.school.fundsNeeded} 
+      <NavLink to={`/school-list/school/${props.school.id}`}>
+        {" "}
+        <button>Donate</button>
+      </NavLink>
     </div>
-  )
-}
+    </div>
+  );
+};
 export default SchoolCard;
