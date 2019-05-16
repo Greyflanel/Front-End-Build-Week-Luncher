@@ -26,12 +26,12 @@ class App extends Component {
         </div>
       <Route exact path='/school-list' component={SchoolList}/>
         <Route exact path='/school-list/school/:id' render={(props) => <School {...props}/>} />
-        
+
       </div>
     )
   }
 }
-export default App;
+export default App; 
 
 // ```*Login Page* - After a "A school administrator (who has the ability to log in) logs in they'll be directed to a home page where they will see a list of schools in need. Donors do not need the ability to login. 
 // *Navigation* - Navigation is present on all pages, Users should know what page is active by clicking on a nav link and activating their tab.
