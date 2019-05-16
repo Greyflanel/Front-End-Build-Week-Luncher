@@ -9,10 +9,9 @@ class Login extends Component {
     }
 
     render() {
-        console.log()
         return (
             <div>
-                <div>
+                <div className="login">
 <input type="text"/>
 <input type="text"/>
 <button>login</button>

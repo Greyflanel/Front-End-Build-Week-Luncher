@@ -23,28 +23,7 @@ class School extends Component {
       });
   };
 
-  addSchool = () => {
-    const newSchool = {
-      schoolName: this.state.schoolName,
-      contact: this.state.contact,
-      state: this.state.state,
-      zip: this.state.zip,
-      fundsNeeded: this.state.fundsNeeded
-    };
-    
-    axios
-      .post("https://luncher-backend.herokuapp.com/api/schools", newSchool)
-      .then(response => this.setState({ schools: response.data }))
-      .catch(error => console.log(error));
-
-    this.setState({
-      schoolName: "",
-      contact: "",
-      state: "",
-      zip: null,
-      fundsNeeded: null
-    });
-  };
+  
 
   
 

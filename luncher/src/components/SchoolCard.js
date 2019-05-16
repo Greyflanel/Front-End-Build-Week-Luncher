@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const SchoolCard = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="card-container">
     <div className="school-card">

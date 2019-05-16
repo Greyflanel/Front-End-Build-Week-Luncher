@@ -6,9 +6,16 @@ class SchoolList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            schools: []
+            schools: [],
+            
+            schoolName: "",
+            contact: "",
+            state: "",
+            zip: "",
+            fundsNeeded: ""
+          }
         }
-    }
+    // }
 componentDidMount() {
     axios
     .get('https://luncher-backend.herokuapp.com/api/schools')
@@ -19,12 +26,38 @@ componentDidMount() {
         console.log('Server Error', error);
     }) 
 }
+
 handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  addSchool = (event) => {
+    event.preventDefault();
+    const newSchool = {
+      schoolName: this.state.schoolName,
+      contact: this.state.contact,
+      state: this.state.state,
+      zip: this.state.zip,
+      fundsNeeded: this.state.fundsNeeded
+    };
     
+    axios
+      .post("https://luncher-backend.herokuapp.com/api/admin/school", newSchool)
+      .then(response => this.setState({ schools: response.data }))
+      .catch(error => console.log(error));
+
+    this.setState({
+      schoolName: "",
+      contact: "",
+      state: "",
+      zip: "",
+      fundsNeeded: ""
+    });
+  };
+
+
 render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
         <div className="school-list">
         {this.state.schools.map(school => (
@@ -36,35 +69,35 @@ render() {
             <form onSubmit={this.addSchool}>
               <input
                 onChange={this.handleInputChange}
-                value={this.state.schoolName}
+                value={this.state.schoolName }
                 placeholder="School Name"
                 name="schoolName"
               />
                <input
                 onChange={this.handleInputChange}
-                value={this.state.contact}
+                value={this.state.contact }
                 placeholder=" email address"
                 name="contact"
               />
                <input
                 onChange={this.handleInputChange}
-                value={this.state.state}
+                value={this.state.state }
                 placeholder=" State"
                 name="state"
               />
                <input
                 onChange={this.handleInputChange}
-                value={this.state.zip}
+                value={this.state.zip }
                 placeholder=" zip code"
                 name="zip"
               />
                <input
                 onChange={this.handleInputChange}
-                value={this.state.fundsNeeded}
+                value={this.state.fundsNeeded }
                 placeholder=" Funds needed"
-                name="funds-needed"
+                name="fundsNeeded"
               />
-              <button type="submit" onClick={this.addSchool}> Add a new school</button>
+              <button type="submit" > Add a new school</button>
             </form>
             </div>
           </div>
