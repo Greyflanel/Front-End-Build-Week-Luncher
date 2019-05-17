@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe,
+html, body, span, applet, object, iframe,
 h1, h2, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -11,7 +11,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 5px;
+	margin: 8px;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -20,8 +20,8 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+footer, header, hgroup, menu, section {
+	display: inline-block;
 }
 body {
 	line-height: 1;
@@ -42,8 +42,6 @@ table {
 	border-spacing: 0;
 }
 body {
-  text-align: center;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -56,43 +54,73 @@ code {
     monospace;
 }
 .card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  text-align: center;
 }
 .school-card {
   display: flex;
   flex-direction: column;
   color: rgb(2, 123, 204);
-  border: 1px solid green;
-  width: 30%;
+  border: 1px solid blueviolet;
+  width: 500px;
  margin: 0;
+ box-shadow: 5px 3px 5px rgb(72, 19, 121);
+ padding: 10px;
+ background-color: rgb(233, 225, 219)
 }
 .school {
   display: flex;
   flex-direction: column;
   color: rgb(2, 123, 204);
-  border: 1px solid green;
-  width: 30%;
-  
+  border: 1px solid blueviolet;
+  width: 500px;
+  box-shadow: 5px 3px 5px rgb(72, 19, 121);
+  padding-bottom: 10px;
+  background-color: rgb(233, 225, 219);
+  height: 150%;
 }
 .school-container {
   display: flex;
-  justify-content: center;
-  margin-top: 200px;
-  
+  justify-content: left;
+  margin: 200px;
+  text-align: center;
 }
 .nav {
   text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+
 }
 input {
   display: flex;
-  justify-content: center;
-  margin-left: 850px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  margin-top: 6px;
+  /* background-color: rgb(225, 250, 144); */
 }
-.App {
-  
-  margin: 0 auto;
-  
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.donateButton {
+  background-color: rgb(225, 250, 144);
+  width: 30%;
+  border-radius: 5px;
+}
+.addForm {
+  width: 370px;
+  box-shadow: 5px 3px 5px rgb(72, 19, 121);
+  background-color: rgb(233, 225, 219);
+  background-color: rgb(225, 250, 144);
+  padding-left: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid blueviolet;
+}
+.addTitle {
+  font-size: 1.5rem;
+  color: rgb(2, 123, 204);
+}
+.schoolButton {
+  background-color: rgb(251, 194, 149);
 }

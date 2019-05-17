@@ -5,6 +5,7 @@ const SchoolCard = props => {
   // console.log(props);
   return (
     <div className="card-container">
+<section>
     <div className="school-card">
       <h3>{props.school.schoolName}</h3>
       <strong>{props.school.contact}</strong>
@@ -15,9 +16,10 @@ const SchoolCard = props => {
       <p>funds needed: </p>${props.school.fundsNeeded} 
       <NavLink to={`/school-list/school/${props.school.id}`}>
         {" "}
-        <button>Donate</button>
+        <button className="donateButton">Donate</button>
       </NavLink>
     </div>
+    </section>
     </div>
   );
 };

@@ -16,13 +16,13 @@ class App extends Component {
     console.log(this.props);
     
     return (
-      <div className="App">
+      <div className="App"><Login />
       <div>
         <nav>
           <NavLink className="nav" exact to='/school-list'> Home</NavLink>
           <Route exact path='/'/>
         </nav>
-        <Login />
+        
         </div>
       <Route exact path='/school-list' component={SchoolList}/>
         <Route exact path='/school-list/school/:id' render={(props) => <School {...props}/>} />

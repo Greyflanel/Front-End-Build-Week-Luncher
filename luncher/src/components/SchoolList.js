@@ -1,37 +1,39 @@
-import React, { Component } from 'react';
-import SchoolCard from './SchoolCard';
-import axios from 'axios';
+import React, { Component } from "react";
+import SchoolCard from "./SchoolCard";
+import axios from "axios";
 
 class SchoolList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            schools: [],
-            
-            schoolName: "",
-            contact: "",
-            state: "",
-            zip: "",
-            fundsNeeded: ""
-          }
-        }
-    // }
-componentDidMount() {
-    axios
-    .get('https://luncher-backend.herokuapp.com/api/schools')
-    .then(response => {
-        this.setState({schools: response.data});
-    })
-    .catch(error => {
-        console.log('Server Error', error);
-    }) 
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      schools: [],
 
-handleInputChange = e => {
+      schoolName: "",
+      contact: "",
+      state: "",
+      zip: "",
+      fundsNeeded: ""
+    };
+  }
+  // }
+  componentDidMount() {
+    axios
+      .get("https://luncher-backend.herokuapp.com/api/schools")
+      .then(response => {
+        this.setState({ schools: response.data });
+      })
+      .catch(error => {
+        console.log("Server Error", error);
+      });
+  }
+
+  handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  addSchool = (event) => {
+  addSchool = event => {
+    console.log("school in state",this.state.schools);
+    
     event.preventDefault();
     const newSchool = {
       schoolName: this.state.schoolName,
@@ -40,7 +42,7 @@ handleInputChange = e => {
       zip: this.state.zip,
       fundsNeeded: this.state.fundsNeeded
     };
-    
+
     axios
       .post("https://luncher-backend.herokuapp.com/api/admin/school", newSchool)
       .then(response => this.setState({ schools: response.data }))
@@ -55,55 +57,38 @@ handleInputChange = e => {
     });
   };
 
-
-render() {
+  render() {
     // console.log(this.state)
     return (
-        <div className="school-list">
-        {this.state.schools.map(school => (
-            <SchoolCard key={school.id} school={school} />
-        ))}
-<div>
-          <h3>Add your school</h3>
+      <div className="school-list">
+        <div>
           <div>
-            <form onSubmit={this.addSchool}>
+            <form className="addForm" onSubmit={this.addSchool}>
+              <strong className="addTitle">Add your school</strong>
               <input
                 onChange={this.handleInputChange}
-                value={this.state.schoolName }
-                placeholder="School Name"
+                value={this.state.schoolName}
+                placeholder=" School Name"
                 name="schoolName"
               />
-               <input
+              <input onChange={this.handleInputChange} value={this.state.contact} placeholder=" email address" name="contact" />
+              <input onChange={this.handleInputChange} value={this.state.state} placeholder=" State" name="state" />
+              <input onChange={this.handleInputChange} value={this.state.zip} placeholder=" zip code" name="zip" />
+              <input
                 onChange={this.handleInputChange}
-                value={this.state.contact }
-                placeholder=" email address"
-                name="contact"
-              />
-               <input
-                onChange={this.handleInputChange}
-                value={this.state.state }
-                placeholder=" State"
-                name="state"
-              />
-               <input
-                onChange={this.handleInputChange}
-                value={this.state.zip }
-                placeholder=" zip code"
-                name="zip"
-              />
-               <input
-                onChange={this.handleInputChange}
-                value={this.state.fundsNeeded }
+                value={this.state.fundsNeeded}
                 placeholder=" Funds needed"
                 name="fundsNeeded"
               />
-              <button type="submit" > Add a new school</button>
+              <button className="schoolButton" > Add a new school</button>
             </form>
-            </div>
           </div>
         </div>
-    )
-}
-
+        {this.state.schools.map(school => (
+            <SchoolCard key={school.id} school={school} />
+        ))}
+      </div>
+    );
+  }
 }
 export default SchoolList;
