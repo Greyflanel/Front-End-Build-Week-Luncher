@@ -43,6 +43,16 @@ class SchoolList extends Component {
       fundsNeeded: this.state.fundsNeeded
     };
 
+  //     deleteSchool = event => {
+  //   event.preventDefault();
+  //   console.log(this.state.school.id);
+   
+  //  axios
+  //  .delete(`/school-list/school/${this.state.school.id}`)
+  //  .then(response => this.setState({school: response.data}))
+  //   .catch(error => console.log(error));
+  //   }
+
     axios
       .post("https://luncher-backend.herokuapp.com/api/admin/school", newSchool)
       .then(response => this.setState({ schools: response.data }))
@@ -58,7 +68,7 @@ class SchoolList extends Component {
   };
 
   render() {
-    // console.log(this.state)
+    // console.log(this.school)
     return (
       <div className="school-list">
         <div>

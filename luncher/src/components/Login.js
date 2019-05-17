@@ -17,9 +17,6 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-
-
-
   adminLogin = (event) => {
     axios.defaults.headers = {'Content-Type': 'application/json', Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjozMywiZmlyc3ROYW1lIjoiUmFuZG9tdXNlciIsImxhc3ROYW1lIjoiUmFuZG9tbGFzdG5hbWUiLCJ1c2VybmFtZSI6InVzZXJAdXNlcm1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU4MDU0MjAzLCJleHAiOjE1NTgxNDA2MDN9.SYj0G1EovcbwYnRcVEAHGH1jpRUO5nAzwntj64b-chQ'}
     event.preventDefault()
@@ -39,7 +36,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="loginRegister">
+      <div className="logRegister">
         <div className="login">
           <strong>Sign In</strong>
         <form onSubmit={this.adminLogin}>
