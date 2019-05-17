@@ -16,10 +16,13 @@ class App extends Component {
     console.log(this.props);
     
     return (
-      <div className="App"><Login />
+      <div className="App">
+        {/* <h1>Luncher</h1> */}
       <div>
+        
+      <Login />
         <nav>
-          <NavLink className="nav" exact to='/school-list'> Home</NavLink>
+          <NavLink activeClassName="nav" exact to='/school-list' activeStyle={{color: "red"}}> Home</NavLink>
           <Route exact path='/'/>
         </nav>
         

@@ -39,8 +39,9 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="loginRegister">
         <div className="login">
+          <strong>Sign In</strong>
         <form onSubmit={this.adminLogin}>
           <input type="text" placeholder=" email" onChange={this.handleInputChange} name="email" value={this.state.email} />
           <input type="text" placeholder=" password" onChange={this.handleInputChange} name="loginPassword" value={this.state.loginPassword} />
@@ -49,6 +50,7 @@ class Login extends Component {
         </div>
         <div>
         <div className="register">
+          <strong>Register</strong>
         <form>
           <input type="text" placeholder=" New user name" onChange={this.handleInputChange} name="newUserName" value={this.state.newUserName} />
           <input type="text" placeholder=" password" onChange={this.handleInputChange} name="newPassword" value={this.state.newPassword} />

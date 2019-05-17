@@ -1,4 +1,4 @@
-html, body, span, applet, object, iframe,
+html, span, applet, object, iframe,
 h1, h2, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -81,14 +81,14 @@ code {
 .school-container {
   display: flex;
   justify-content: left;
-  margin: 200px;
+  margin-top: 200px;
   text-align: center;
 }
 .nav {
   text-decoration: none;
   text-align: center;
   font-size: 1.5rem;
-
+  margin-left: 150px;
 }
 input {
   display: flex;
@@ -123,4 +123,19 @@ div {
 }
 .schoolButton {
   background-color: rgb(251, 194, 149);
+}
+.login {
+  display: inline-block;
+  margin-left: 60px;
+}
+.register {
+  display: inline-block;
+  margin-left: 30%;
+  margin-right: 180px;
+  
+}
+.loginRegister {
+ margin-left: 40px;
+ background-color: rgb(199, 225, 248); 
+ height: 120px;
 }
