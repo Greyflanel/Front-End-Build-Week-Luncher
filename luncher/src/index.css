@@ -25,8 +25,8 @@ footer, header, hgroup, menu, section {
 }
 body {
   line-height: 1;
-  /* width: 1630px;
-  margin: 0 auto; */
+  width: 1630px;
+  margin: 0 auto;
 }
 ol, ul {
 	list-style: none;
@@ -65,10 +65,10 @@ code {
   color: rgb(2, 123, 204);
   border: 1px solid blueviolet;
   width: 500px;
- margin: 0;
- box-shadow: 5px 3px 5px rgb(72, 19, 121);
- padding: 10px;
- background-color: rgb(233, 225, 219)
+  margin: 0;
+  box-shadow: 5px 3px 5px rgb(72, 19, 121);
+  padding: 10px;
+  background-color: rgb(233, 225, 219)
 }
 .school {
   display: flex;

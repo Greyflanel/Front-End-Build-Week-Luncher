@@ -68,7 +68,7 @@ class SchoolList extends Component {
   };
 
   render() {
-    // console.log(this.school)
+    
     return (
       <div className="school-list">
         <div>

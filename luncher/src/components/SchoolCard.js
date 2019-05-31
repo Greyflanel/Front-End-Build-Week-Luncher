@@ -5,7 +5,7 @@ const SchoolCard = props => {
   // console.log(props);
   return (
     <div className="card-container">
-<section>
+
     <div className="school-card">
       <h3>{props.school.schoolName}</h3>
       <strong>{props.school.contact}</strong>
@@ -19,7 +19,7 @@ const SchoolCard = props => {
         <button className="donateButton">Donate</button>
       </NavLink>
     </div>
-    </section>
+    
     </div>
   );
 };

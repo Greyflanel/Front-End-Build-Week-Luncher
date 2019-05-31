@@ -18,12 +18,15 @@ class Login extends Component {
   };
 
   adminLogin = (event) => {
-    axios.defaults.headers = {'Content-Type': 'application/json', Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjozMywiZmlyc3ROYW1lIjoiUmFuZG9tdXNlciIsImxhc3ROYW1lIjoiUmFuZG9tbGFzdG5hbWUiLCJ1c2VybmFtZSI6InVzZXJAdXNlcm1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU4MDU0MjAzLCJleHAiOjE1NTgxNDA2MDN9.SYj0G1EovcbwYnRcVEAHGH1jpRUO5nAzwntj64b-chQ'}
+    // axios.defaults.headers = {'Content-Type': 'application/json', Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjozLCJmaXJzdE5hbWUiOiJIYXJ2ZXkiLCJsYXN0TmFtZSI6IkpvbmVzIiwidXNlcm5hbWUiOiJoakBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NTgxMzUxNDYsImV4cCI6MTU1ODIyMTU0Nn0.uhBAQKjWM5XEU708bTDmDRIgajJ56rW65SBqqLpwuek'}
     event.preventDefault()
       const credentials = { email: this.state.email, password: this.state.loginPassword }
     axios
     .post("https://luncher-backend.herokuapp.com/api/login",  credentials)
-    .then(response => {console.log(response)
+    .then(response => {
+      console.log(response.data);
+      
+      localStorage.setItem('userToken', response.data.token)
     })
     .catch(error => console.log(error));
 

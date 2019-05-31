@@ -27,7 +27,7 @@ class School extends Component {
   deleteSchool = event => {
   
    axios
-   .delete(`https://luncher-backend.herokuapp.com/api/schools/${this.props.match.params.id}`)
+   .delete(`https://luncher-backend.herokuapp.com/api/admin/${this.props.match.params.id}`)
    .then(response => this.setState({school: response.data}))
     .catch(error => console.log(error));
     event.preventDefault();
@@ -53,7 +53,7 @@ class School extends Component {
   
 
   render() {
-      console.log(this.props.school);
+      // console.log(this.props.school);
       
     return (
       <div className="school-container">

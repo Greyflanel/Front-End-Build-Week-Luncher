@@ -27,9 +27,9 @@ class DeleteForm extends Component {
         <div>
         <div>
           <div>
-            <form className="deleteForm" onSubmit={this.deleteSchool}>
+            <form className="deleteForm" >
               <strong className="addTitle">Delete a school</strong>
-              <input
+              {/* <input
                 onChange={this.handleInputChange}
                 value={this.state.schoolName}
                 placeholder=" School Name"
@@ -43,8 +43,8 @@ class DeleteForm extends Component {
                 value={this.state.fundsNeeded}
                 placeholder=" Funds needed"
                 name="fundsNeeded"
-              />
-              <button className="schoolButton" >  Delete  school</button>
+              /> */}
+              <button className="schoolButton" onClick={this.deleteSchool}>  Delete  school</button>
             </form>
           </div>
         </div>    
